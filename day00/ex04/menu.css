@@ -11,8 +11,6 @@
     border: none;
 }
 
-
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -28,9 +26,7 @@
 }
 
 .dropdown-content a:hover {background-color: pink;}
-
 .dropdown:hover .dropdown-content {display: block;}
-
 .dropdown:hover .dropbtn {
     background-color: pink;
 }
