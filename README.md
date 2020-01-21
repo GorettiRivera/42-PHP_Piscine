@@ -1,6 +1,6 @@
 # 42-PHP_Piscine
 
-The PHP pool will allow you to access basic web technologies.
+The PHP piscine will allow you to access basic web technologies.
 
 ## Objectives:
 * HTML
