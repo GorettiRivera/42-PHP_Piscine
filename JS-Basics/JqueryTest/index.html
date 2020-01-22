@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Document</title>
+     <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $("#test").load("data.txt",{
+                    Name: "Maria", 
+                    Lastname: "Rivera"
+                }, function(){
+                    alert("Hi There!");
+                });
+            });           
+       }); 
+     </script>
+</head>
+<body>
+    <div id="test">
+        <p>This is the fisrt content!!</p>
+    </div>
+    <button id= "btn">Click to change</button>
+</body>
+</html>

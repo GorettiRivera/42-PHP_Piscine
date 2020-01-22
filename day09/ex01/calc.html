@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <style>
+        body {
+            background-color: rgb(200, 204, 203);
+            font-family: Arial;
+            text-decoration: none;
+        }
+
+        .recta {
+            width: 200px;
+            background-color: #646262;
+            padding: 4px 50px 50px 50px;
+        }
+
+        input[type='text'] {
+            width: 170px;
+            height: 30px;
+        }
+
+        select,
+        input[type='submit'] {
+            width: 200px;
+            height: 44px;
+        }
+
+        select {
+            text-indent: 90px;
+        }
+
+        input,
+        select {
+            padding: 6px 12px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            text-align: center;
+            background-color: #ffffff;
+        }
+    </style>
+    <script>
+        let calc;
+        let left;
+        let right;
+        let operation;
+        window.onload = function () {
+            calc = document.querySelector("#calc");
+            left = document.querySelector("#left");
+            right = document.querySelector("#right");
+            operation = document.querySelector("#operation");
+            calc.addEventListener("submit", submit);
+            setInterval("alert('Please, use me...')", 30000);
+        }
+        function isValid(leftval, rightval) {
+            return leftval == parseInt(leftval, 10) && leftval >= 0 && rightval == parseInt(rightval, 10) && rightval >= 0;
+        }
+        function submit(event) {
+            event.preventDefault();
+            let leftval = Number(left.value);
+            let rightval = Number(right.value);
+            if (!isValid(left.value, right.value)) {
+                alert("Error :(");
+                return false;
+            }
+            switch (operation.value) {
+                case ('addition'):
+                    result(leftval + rightval);
+                    break;
+                case ('subtraction'):
+                    result(leftval - rightval);
+                    break;
+                case ('multiplication'):
+                    result(leftval * rightval);
+                    break;
+                case ('division'):
+                    if (rightval === 0) {
+                        result("It’s over 9000!");
+                    } else {
+                        result(leftval / rightval);
+                    }
+                    break;
+                case ('mod'):
+                    if (rightval === 0) {
+                        result("It’s over 9000!");
+                    } else {
+                        result(leftval / rightval);
+                    }
+                    break;
+            }
+        }
+        function result(result) {
+            console.log(result);
+            alert(result);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="recta">
+        <h1>Calculator</h1>
+        <form action="" id="calc">
+            <input type="text" id="left">
+            <select id="operation">
+                <option value="addition">+</option>
+                <option value="subtraction">-</option>
+                <option value="multiplication">*</option>
+                <option value="division">/</option>
+                <option value="mod">%</option>
+            </select>
+            <input type="text" id="right">
+            <input type="submit" id="submit" value="Try me!">
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+<- Vertex ----------------------------------------------------------------------
+The Vertex class represents a point in space. We represent
+a vertex according to five characteristics: axis coordinate (x,y,z,w) and Color.
+
+An instance can be contructed from either an axis coordinates(x,y,z, or w):
+new Vertex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 0.0 ) );
+
+Or a color represented by an instance of the Color Class from the previous exercise:
+new Vertex( array( 'x' => 1.0, 'y' => 0.0, 'z' => 0.0, 'color' => $green ) );
+---------------------------------------------------------------------- Vertex ->
